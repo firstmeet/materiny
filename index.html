@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孕育</title>助手 - 女性健康与孕育管理</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body></body>
+    <!-- 登录页面 -->
+    <div id="loginPage" class="page active">
+        <div class="login-container">
+            <div class="app-logo">
+                <i class="fas fa-heart fa-3x"></i>
+                <h1>孕育</h1>助手</h1>
+                <p>女性</p>健康与孕育管理专家</p>
+            </div>
+
+            <div class="login-buttons">
+                <button class="btn-huawei" onclick="huaweiLogin()">
+                    <i class="fab fa-huawei"></i>
+                    华为一键登录
+                </button>
+                <button class="btn-wechat" onclick="wechatLogin()">
+                    <i class="fab fa-weixin"></i>
+                    微信登录
+                </button>
+            </div>
+
+            <div class="login-footer">
+                <p></p>登录即表示同意<a href="#">用户协议</a>和<a href="#">隐私政策</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 用户信息设置页面 -->
+    <div id="userSetupPage" class="page">
+        <div class="setup-container">
+            <div class="setup-header">
+                <h2>请</h2>选择您的状态</h2>
+                <p>我们将为您提供个性化的服务</p</p>>
+            </div>
+
+            <div class="status-selection">
+                <div class="status-card" onclick="selectStatus('health')">
+                    <div class="status-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3></h3>女性健康管理</h3>
+                    <p>经</p>期追踪、排卵预测、健康记录</p>
+                </div>
+
+                <div class="status-card" onclick="selectStatus('pregnancy')">
+                    <div class="status-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>孕期</h3>管理</h3>
+                    <p>胎</p>动监测、宫缩计时、产检提醒</p>
+                </div>
+
+                <div class="status-card" onclick="selectStatus('parenting')">
+                    <div class="status-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>育儿管理</h3></h3>
+                    <p>疫苗接种、</p>成长记录、育儿百科</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主页面 -->
+    <div id="mainPage" class="page">
+        <!-- 顶部状态栏 -->
+        <header class="main-header">
+            <div class="header-left">
+                <div class="user-status" id="userStatus">
+                    <span class="status-text">经期第3天</span>
+                    <span class="status-days">剩余2天</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <i class="fas fa-bell" onclick="showNotifications()"></i>
+                <i class="fas fa-user" onclick="showProfile()"></i>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 今日提醒 -->
+            <section class="today-reminder">
+                <div class="reminder-header">
+                    <h3>今日</h3>提醒</h3>
+                    <span class="date">2024年1月15日</span>
+                </div>
+                <div class="reminder-content">
+                    <div class="reminder-item important">
+                        <i class="fas fa-pills"></i>
+                        <div class="reminder-info">
+                            <h4>补充</h4>叶酸</h4>
+                            <p></p>上午 8:00</p>
+                        </div>
+                    </div>
+                    <div class="reminder-item">
+                        <i class="fas fa-walking"></i>
+                        <div class="reminder-info">
+                            <h4>散步</h4>30分钟</h4>
+                            <p></p>下午 4:00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心工具区域 -->
+            <section class="tools-section">
+                <h2></h2>核心工具</h2>
+                <div class="tools-grid">
+                    <!-- 女性健康工具 -->
+                    <div class="tool-card" onclick="openTool('period')">
+                        <div class="tool-icon health">
+                            <i class="fas fa-calendar-heart"></i>
+                        </div>
+                        <h3></h3>经期预测</h3>
+                        <p>智能</p>预测月经周期</p>
+                    </div>
+
+                    <div class="tool-card" onclick="openTool('ovulation')">
+                        <div class="tool-icon health">
+                            <i class="fas fa-egg"></i>
+                        </div>
+                        <h3>排卵</h3>预测</h3>
+                        <p>精准</p>计算易孕期</p>
+                    </div>
+
+                    <!-- 孕期工具 -->
+                    <div class="tool-card" onclick="openTool('fetalMovement')">
+                        <div class="tool-icon pregnancy">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>胎</h3>动计数</h3>
+                        <p></p>实时监测胎动</p>
+                    </div>
+
+                    <div class="tool-card" onclick="openTool('contraction')">
+                        <div class="tool-icon pregnancy">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <h3></h3>宫缩计时</h3>
+                        <p>记录</p>宫缩频率</p>
+                    </div>
+
+                    <!-- 育儿工具 -->
+                    <div class="tool-card" onclick="openTool('vaccine')">
+                        <div class="tool-icon parenting">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3>疫苗接种</h3></h3>
+                        <p></p>提醒与记录</p>
+                    </div>
+
+                    <div class="tool-card" onclick="openTool('growth')">
+                        <div class="tool-icon parenting">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>成长</h3>记录</h3>
+                        <p>身高</p>体重曲线</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 更多工具 -->
+            <section class="more-tools">
+                <h2>更多</h2>工具</h2>
+                <div class="more-tools-grid">
+                    <div class="more-tool-item" onclick="openTool('temperature')">
+                        <i class="fas fa-thermometer-half"></i>
+                        <span></span>基础体温</span>
+                    </div>
+                    <div class="more-tool-item" onclick="openTool('symptoms')">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>症状记录</</span>span>
+                    </div>
+                    <div class="more-tool-item" onclick="openTool('checkup')">
+                        <i class="fas fa-file-medical"></i>
+                        <span></span>产检提醒</span>
+                    </div>
+                    <div class="more-tool-item" onclick="openTool('encyclopedia')">
+                        <i class="fas fa-book-medical"></i>
+                        <span>育儿百科</span></span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 底部导航 -->
+        <nav class="bottom-nav">
+            <div class="nav-item active" onclick="switchTab('home')">
+                <i class="fas fa-home"></i>
+                <span>首页</span></span>
+            </div>
+            <div class="nav-item" onclick="switchTab('tools')">
+                <i class="fas fa-tools"></i>
+                <span>工具</span></span>
+            </div>
+            <div class="nav-item" onclick="switchTab('records')">
+                <i class="fas fa-chart-bar"></i>
+                <span>记录</span></span>
+            </div>
+            <div class="nav-item" onclick="switchTab('profile')">
+                <i class="fas fa-user"></i>
+                <span></span>我的</span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 工具页面容器 -->
+    <div id="toolPages" class="page">
+        <!-- 这里会动态加载各个工具页面 -->
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
